@@ -2,9 +2,9 @@
     <description>DataServices Connecting to a Postgres DB</description>
     <config id="EmployeesDataSource">
         <property name="driverClassName">org.postgresql.Driver</property>
-        <property name="url">jdbc:postgresql://localhost:5432/Employees</property>
-        <property name="username">postgres</property>
-        <property name="password">mysecretpassword</property>
+        <property name="url">jdbc:postgresql://pg-b48cc93efa334420a155bc653b4d46be-amlabenv988335036-choreo-or.i.aivencloud.com:24901/defaultdb</property>
+        <property name="username">avnadmin</property>
+        <property name="password">AVNS_GhaypcsBmVUDvV4DagT</property>
     </config>
     <query id="GetAllEmployees" useConfig="EmployeesDataSource">
         <sql>select Employeenumber, FirstName, LastName, Email, Salary from Employees;</sql>
