@@ -12,10 +12,10 @@ paths:
       responses:
         default:
           description: Default response
-  /employee/{employeenumber}:
+  /employee/{employeeNumber}:
     get:
       parameters:
-      - name: employeenumber
+      - name: employeeNumber
         in: path
         required: true
         style: simple

@@ -42,7 +42,7 @@
             }
             }</result>
     </query>
-    <resource method="GET" path="employee/{employeenumber}" disableStreaming="true">
+    <resource method="GET" path="employee/{Employeenumber}" disableStreaming="true">
         <call-query href="get_employeesemployeenumber_query">
             <with-param name="Employeenumber" query-param="Employeenumber"/>
         </call-query>
@@ -83,7 +83,7 @@
         <sql>DELETE FROM Employees WHERE Employeenumber=?;</sql>
         <param name="EmployeeNumber" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
     </query>
-    <resource method="DELETE" path="employee/{employeenumber}" disableStreaming="true">
+    <resource method="DELETE" path="employee/{Employeenumber}" disableStreaming="true">
         <call-query href="delete_employeesemployeenumber_query">
             <with-param name="EmployeeNumber" query-param="EmployeeNumber"/>
         </call-query>
@@ -93,5 +93,14 @@
     </operation>
     <operation name="EmployeeByID" disableStreaming="true">
         <call-query href="get_employeesemployeenumber_query"/>
+    </operation>
+    <operation name="SaveEmployee" disableStreaming="true">
+        <call-query href="post_employees_query"/>
+    </operation>
+    <operation name="UpdateEmployee" disableStreaming="true">
+        <call-query href="put_employees_query"/>
+    </operation>
+    <operation name="RemoveEmployee" disableStreaming="true">
+        <call-query href="delete_employeesemployeenumber_query"/>
     </operation>
 </data>

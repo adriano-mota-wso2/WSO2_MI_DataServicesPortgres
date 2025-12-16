@@ -16,13 +16,19 @@
         <faultSequence>
         </faultSequence>
     </resource>
-    <resource methods="GET" uri-template="/employee/{employeenumber}">
+    <resource methods="GET" uri-template="/employee/{employeeNumber}">
         <inSequence>
-            <dataServiceCall serviceName="PostgresDS">
-                <operations type="single"/>
-                <source type="inline"/>
-                <target type="body"/>
-            </dataServiceCall>
+            <http.get configKey="EmployeeConnection">
+                <relativePath>${params.pathParams.employeeNumber}</relativePath>
+                <headers>[]</headers>
+                <forceScAccepted>false</forceScAccepted>
+                <disableChunking>false</disableChunking>
+                <forceHttp10>false</forceHttp10>
+                <noKeepAlive>false</noKeepAlive>
+                <responseVariable>http_get_1</responseVariable>
+                <overwriteBody>true</overwriteBody>
+            </http.get>
+            <property name="messageType" value="application/json" scope="axis2"/>
             <respond/>
         </inSequence>
         <faultSequence>
