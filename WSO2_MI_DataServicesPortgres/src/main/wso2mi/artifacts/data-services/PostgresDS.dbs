@@ -91,4 +91,7 @@
     <operation name="ListEmployee">
         <call-query href="GetAllEmployees"/>
     </operation>
+    <operation name="EmployeeByID" disableStreaming="true">
+        <call-query href="get_employeesemployeenumber_query"/>
+    </operation>
 </data>

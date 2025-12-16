@@ -1,0 +1,27 @@
+openapi: 3.0.1
+info:
+  title: EmployeesAPI
+  description: API Definition of EmployeesAPI
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/employeesapi
+- url: https://localhost:8253/employeesapi
+paths:
+  /employee:
+    get:
+      responses:
+        default:
+          description: Default response
+  /employee/{employeenumber}:
+    get:
+      parameters:
+      - name: employeenumber
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default response

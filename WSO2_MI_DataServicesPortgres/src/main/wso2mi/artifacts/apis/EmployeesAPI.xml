@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/employeesapi" name="EmployeesAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/employee">
+        <inSequence>
+            <dataServiceCall serviceName="PostgresDS">
+                <operations type="single">
+                    <operation name="ListEmployee">
+                    </operation>
+                </operations>
+                <source type="inline"/>
+                <target type="body"/>
+            </dataServiceCall>
+            <property name="messageType" value="application/json" scope="axis2"/>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/employee/{employeenumber}">
+        <inSequence>
+            <dataServiceCall serviceName="PostgresDS">
+                <operations type="single"/>
+                <source type="inline"/>
+                <target type="body"/>
+            </dataServiceCall>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+</api>
